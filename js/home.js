@@ -18,7 +18,7 @@ RC.pages.home = function (el) {
       <div class="mock-body">
         <div class="mock-side"><span class="on">Personal info</span><span>Summary</span><span>Experience</span><span>Education</span><span>Skills</span><span>Projects</span></div>
         <div class="mock-paper"><div class="paper">
-          <div class="pname">Priya Sharma</div>
+          <div class="pname">Shailesh Chauhan</div>
           <div style="color:var(--accent);font-weight:600;margin-bottom:8px">Frontend Developer</div>
           <div class="bar a s"></div><div class="bar"></div><div class="bar m"></div>
           <div class="bar a w" style="margin-top:12px"></div><div class="bar"></div><div class="bar m"></div><div class="bar w"></div>

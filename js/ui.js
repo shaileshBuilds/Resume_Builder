@@ -32,7 +32,7 @@
     var li = nav.map(function (r) { return '<li><a href="' + U.href(r.p) + '">' + r.t + '</a></li>'; }).join('');
     var mob = nav.map(function (r) { return '<a href="' + U.href(r.p) + '">' + r.t + '</a>'; }).join('');
     return '<header class="nav"><div class="wrap">' +
-      '<a href="#/" class="logo" aria-label="ResumeCraft Studio home"><i><i data-lucide="file-pen-line"></i></i>ResumeCraft Studio</a>' +
+      '<a href="#/" class="logo" aria-label="ResumeCraft Studio home"><i><i data-lucide="file-pen-line"></i></i>ResumeCraft</a>' +
       '<nav aria-label="Main"><ul class="links">' + li + '</ul></nav>' +
       '<div class="actions"><button class="icon-btn" id="theme" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>' +
       '<a href="#/login" class="btn btn-g hide-m">Login</a><a href="#/resume-builder" class="btn btn-p hide-m">Create Resume</a>' +
@@ -41,15 +41,155 @@
       '<a href="#/dashboard">Dashboard</a><a href="#/login">Login</a><a href="#/resume-builder" class="btn btn-p">Create Resume</a></nav>';
   };
 
+  // U.footer = function () {
+  //   var cols = {};
+  //   RC.routes.forEach(function (r) { if (r.f) (cols[r.f] = cols[r.f] || []).push(r); });
+  //   var html = Object.keys(cols).map(function (k) {
+  //     return '<div' + (cols[k].length > 6 ? ' class="fwide"' : '') + '><h4>' + k + '</h4><ul>' + cols[k].map(function (r) { return '<li><a href="' + U.href(r.p) + '">' + r.t + '</a></li>'; }).join('') + '</ul></div>';
+  //   }).join('');
+  //   return '<footer><div class="wrap"><div class="fgrid"><div><a href="#/" class="logo"><i><i data-lucide="file-pen-line"></i></i>ResumeCraft Studio</a>' +
+  //     '<p style="color:var(--muted);margin-top:14px;max-width:300px;font-size:.92rem">Resumes that read well, for people and for software.</p></div>' + html +
+  //     '</div><div class="fbot"><span>&copy; ' + new Date().getFullYear() + ' ResumeCraft Studio. All rights reserved.</span><span>Built in the browser. By Shaliesh Chauhan.</span></div></div></footer>';
+  // };
+
   U.footer = function () {
     var cols = {};
-    RC.routes.forEach(function (r) { if (r.f) (cols[r.f] = cols[r.f] || []).push(r); });
+  
+    // Group routes by footer category
+    RC.routes.forEach(function (r) {
+      if (!r.f) return;
+  
+      if (!cols[r.f]) {
+        cols[r.f] = [];
+      }
+  
+      cols[r.f].push(r);
+    });
+  
     var html = Object.keys(cols).map(function (k) {
-      return '<div' + (cols[k].length > 6 ? ' class="fwide"' : '') + '><h4>' + k + '</h4><ul>' + cols[k].map(function (r) { return '<li><a href="' + U.href(r.p) + '">' + r.t + '</a></li>'; }).join('') + '</ul></div>';
+  
+      /* =========================================
+         SPECIAL TOOLS COLUMN
+         ========================================= */
+         if (k === 'Tools') {
+          var tools = cols[k] || [];
+        
+          tools = tools.filter(function (r) {
+            return ![
+              'skill-suggestions',
+              'jd-analyzer',
+              'dashboard',
+              'pricing'
+            ].includes(r.p);
+          });
+        
+          var leftTools = tools.slice(0, 5);
+          var rightTools = tools.slice(5);
+        
+          return `
+            <div class="ftools">
+              <h4>Tools</h4>
+        
+              <div class="tools-links">
+        
+                <ul>
+                  ${leftTools.map(function (r) {
+                    return `
+                      <li>
+                        <a href="${U.href(r.p)}">${r.t}</a>
+                      </li>
+                    `;
+                  }).join('')}
+                </ul>
+        
+                <ul>
+                  ${rightTools.map(function (r) {
+                    return `
+                      <li>
+                        <a href="${U.href(r.p)}">${r.t}</a>
+                      </li>
+                    `;
+                  }).join('')}
+                </ul>
+        
+              </div>
+            </div>
+          `;
+        }
+  
+      /* =========================================
+         ALL OTHER FOOTER COLUMNS
+         ========================================= */
+      return `
+        <div class="fcol">
+  
+          <h4>${k}</h4>
+  
+          <ul>
+            ${cols[k].map(function (r) {
+              return `
+                <li>
+                  <a href="${U.href(r.p)}">${r.t}</a>
+                </li>
+              `;
+            }).join('')}
+          </ul>
+  
+        </div>
+      `;
+  
     }).join('');
-    return '<footer><div class="wrap"><div class="fgrid"><div><a href="#/" class="logo"><i><i data-lucide="file-pen-line"></i></i>ResumeCraft Studio</a>' +
-      '<p style="color:var(--muted);margin-top:14px;max-width:300px;font-size:.92rem">Resumes that read well, for people and for software.</p></div>' + html +
-      '</div><div class="fbot"><span>&copy; ' + new Date().getFullYear() + ' ResumeCraft Studio. All rights reserved.</span><span>Built in the browser. No data leaves your device.</span></div></div></footer>';
+  
+    /* =========================================
+       COMPLETE FOOTER
+       ========================================= */
+  
+    return `
+      <footer>
+  
+        <div class="wrap">
+  
+          <div class="fgrid">
+  
+            <!-- BRAND -->
+            <div class="fbrand">
+  
+              <a href="#/" class="logo">
+                <i>
+                  <i data-lucide="file-pen-line"></i>
+                </i>
+  
+                <span>ResumeCraft Studio</span>
+              </a>
+  
+              <p>
+                Resumes that read well, for people and for software.
+              </p>
+  
+            </div>
+  
+            ${html}
+  
+          </div>
+  
+          <!-- BOTTOM BAR -->
+          <div class="fbot">
+  
+            <span>
+              &copy; ${new Date().getFullYear()}
+              ResumeCraft Studio. All rights reserved.
+            </span>
+  
+            <span>
+              Built in the browser. By Shaliesh Chauhan.
+            </span>
+  
+          </div>
+  
+        </div>
+  
+      </footer>
+    `;
   };
 
   U.toast = function (msg, type) {
