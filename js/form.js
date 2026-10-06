@@ -25,7 +25,7 @@
   var D = function (k, l, o) { o = o || {}; o.k = k; o.l = l; o.t = 'date'; o.half = 1; o.ph = o.ph || 'YYYY-MM  (e.g. 2022-04)'; return o; };
 
   var PERSONAL = [
-    { k: 'fullName', l: 'Full name', req: 1, max: 60, half: 1, ph: 'e.g. Priya Sharma', ac: 'name' },
+    { k: 'fullName', l: 'Full name', req: 1, max: 60, half: 1, ph: 'e.g. Shailesh Chauhan', ac: 'name' },
     { k: 'jobTitle', l: 'Job title', max: 80, half: 1, ph: 'e.g. Senior Frontend Developer', ac: 'organization-title' },
     { k: 'email', l: 'Email', req: 1, t: 'email', max: 100, half: 1, ph: 'name@example.com', ac: 'email' },
     { k: 'phone', l: 'Phone', t: 'tel', max: 20, half: 1, ph: '+91 98765 43210', ac: 'tel' },
