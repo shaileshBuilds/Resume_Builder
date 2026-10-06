@@ -1,0 +1,30 @@
+/* Route table: p = hash path, t = title, nav = show in top nav, f = footer column */
+window.RC = window.RC || {};
+RC.routes = [
+  { p: '', t: 'Home' },
+  { p: 'templates', t: 'Templates', nav: 1, f: 'Product' },
+  { p: 'resume-builder', t: 'Resume Builder', nav: 1, f: 'Product' },
+  { p: 'editor', t: 'Visual Editor' },
+  { p: 'cover-letter', t: 'Cover Letter', nav: 1, f: 'Product' },
+  { p: 'resume-examples', t: 'Resume Examples', nav: 1, f: 'Product' },
+  { p: 'career-tools', t: 'Career Tools', nav: 1, f: 'Tools' },
+  { p: 'ats-checker', t: 'ATS Checker', f: 'Tools' },
+  { p: 'resume-score', t: 'Resume Score', f: 'Tools' },
+  { p: 'word-counter', t: 'Word Counter', f: 'Tools' },
+  { p: 'action-verbs', t: 'Action Verbs', f: 'Tools' },
+  { p: 'skill-suggestions', t: 'Skill Suggestions', f: 'Tools' },
+  { p: 'jd-analyzer', t: 'Job Description Analyzer', f: 'Tools' },
+  { p: 'dashboard', t: 'Dashboard', f: 'Tools' },
+  { p: 'pricing', t: 'Pricing', nav: 1, f: 'Tools' },
+  { p: 'resume-tips', t: 'Resume Tips', f: 'Resources' },
+  { p: 'interview-tips', t: 'Interview Tips', f: 'Resources' },
+  { p: 'career-blog', t: 'Career Blog', f: 'Resources' },
+  { p: 'about', t: 'About', f: 'Company' },
+  { p: 'contact', t: 'Contact', f: 'Company' },
+  { p: 'faq', t: 'FAQ', f: 'Company' },
+  { p: 'login', t: 'Login' },
+  { p: 'register', t: 'Register' },
+  { p: 'settings', t: 'Settings', f: 'Legal' },
+  { p: 'privacy', t: 'Privacy', f: 'Legal' },
+  { p: 'terms', t: 'Terms', f: 'Legal' }
+];
