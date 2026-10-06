@@ -1,8 +1,8 @@
 /* Fictional demo resumes (all names, employers and contact details are made up). */
 RC.sample = {
   experienced: {
-    label: 'Experienced developer', name: 'Shailesh Sharma, Frontend Developer', templateId: 'modern-sidebar',
-    personalInfo: { fullName: 'Shailesh Sharma', jobTitle: 'Senior Frontend Developer', email: 'Shailesh.sharma@example.com', phone: '+91 98765 43210', location: 'Pune, Maharashtra', website: 'Shaileshsharma.example.com', linkedin: 'linkedin.com/in/Shailesh-sharma-example', github: 'github.com/Shailesh-example', profilePhoto: '' },
+    label: 'Experienced developer', name: 'Shailesh , Frontend Developer', templateId: 'modern-sidebar',
+    personalInfo: { fullName: 'Shailesh ', jobTitle: 'Senior Frontend Developer', email: 'Shailesh.sharma@example.com', phone: '+91 98765 43210', location: 'Pune, Maharashtra', website: 'Shaileshsharma.example.com', linkedin: 'linkedin.com/in/Shailesh-sharma-example', github: 'github.com/Shailesh-example', profilePhoto: '' },
     summary: 'Frontend developer with 7 years of experience building fast, accessible web apps for retail and fintech teams. Leads small squads, mentors juniors, and cares about performance and clear interfaces.',
     experience: [
       { company: 'Northwind Retail Tech', position: 'Senior Frontend Developer', location: 'Pune', startDate: '2022-04', endDate: '', current: true, description: 'Own the storefront UI used by 2 million shoppers a month.', achievements: ['Cut largest contentful paint from 3.8s to 1.9s by splitting bundles and lazy loading images', 'Led a 5-person squad that rebuilt checkout, lifting completion by 11%', 'Introduced an accessibility checklist that cleared all critical audit issues'] },
