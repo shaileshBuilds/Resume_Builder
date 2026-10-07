@@ -633,6 +633,8 @@ footer{margin-top:64px}
   .fm-ia{gap:3px}.fm-ib{width:32px;height:32px}.fm-photo{flex-direction:column}
   .fm-ih{flex-wrap:wrap}.fm-ih .fm-ia{margin-left:auto}
 }
+ 
+
 .fld label.fm-ck{display:flex;font-weight:500;margin:0}
 
 /* ===== Part 14: form history buttons ===== */
@@ -785,7 +787,7 @@ h1,h2,h3{overflow-wrap:anywhere}
   .final{padding:40px 20px}.final .btn{flex:1 1 100%;justify-content:center}
   section{padding-block:48px}
 }
-@media(max-width:380px){.wrap{width:calc(100% - 28px)}.logo{font-size:1rem}.logo i{width:30px;height:30px}.stats .wrap{grid-template-columns:1fr 1fr}.stat strong{font-size:1.4rem}}
+@media(max-width:380px){.wrap{width:calc(100%)}.logo{font-size:1rem}.logo i{width:30px;height:30px}.stats .wrap{grid-template-columns:1fr 1fr}.stat strong{font-size:1.4rem}}
 
 /* ---- Part 21: footer fix (5 link columns + brand = 6 tracks) ---- */
 footer{padding:56px 0 24px}
